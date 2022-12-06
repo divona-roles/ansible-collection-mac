@@ -15,8 +15,10 @@
 ---
 # handlers file for base
 
-- name: Restart systemd-timesyncd
-  ansible.builtin.service:
-    name: systemd-timesyncd.service
-    state: restarted
-  listen: systemd-timesyncd configuration changed
+- name: Clear homebrew cache
+  file:
+    path: "{{ homebrew_cache_path.stdout | trim }}"
+    state: absent
+  when: 'homebrew_clear_cache | bool'
+  become: "{{ (homebrew_user != ansible_user_id) | bool }}"
+  become_user: "{{ homebrew_user }}"

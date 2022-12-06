@@ -26,5 +26,5 @@
     state: present
   vars:
     packages:
-      - koekeishiya/formulae/kwm
+      # - koekeishiya/formulae/kwm
       - amethyst

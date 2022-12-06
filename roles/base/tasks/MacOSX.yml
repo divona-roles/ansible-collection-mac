@@ -22,15 +22,15 @@
     - tmux
     - ncdu
 
-- name: Packages | Install libraries with homebrew
-  community.general.homebrew:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - git
-    - gpg2
-    - pinentry
-    - wget
+# - name: Packages | Install libraries with homebrew
+#   community.general.homebrew:
+#     name: "{{ item }}"
+#     state: present
+#   with_items:
+#     - git
+#     - gpg2
+#     - pinentry
+#     - wget
 
 - name: Packages | Install modern Unix tools
   community.general.homebrew:

@@ -14,16 +14,16 @@
 
 ---
 - name: Emacs | Install
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: emacs
     state: present
 
 - name: VSCode | Install
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: visual-studio-code
     state: present
 
 - name: VimR | Install
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: vimr
     state: present
