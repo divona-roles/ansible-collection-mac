@@ -1,0 +1,30 @@
+# Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+---
+# - name: Add specific folders to dock
+#   command: defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>{{ item }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+#   with_items:
+#     - "/Users/{{ user }}/Documents"
+#     - "/Users/{{ user }}/Projects"
+#     - "/Users/{{ user }}/Applications"
+
+- name: Install | Windows manager
+  homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - koekeishiya/formulae/kwm
+      - amethyst
