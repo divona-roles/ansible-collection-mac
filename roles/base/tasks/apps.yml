@@ -13,12 +13,21 @@
 # limitations under the License.
 
 ---
-- name: Packages | Install Mac App Store CLI
+- name: Packages | Install management tools
   community.general.homebrew:
     name: "{{ item }}"
     state: present
   with_items:
     - mas
+    - asdf
+
+- name: Packages | Install terminal emulators
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - iterm2
+    - alacritty
 
 - name: Packages | Install shell tools
   community.general.homebrew:
