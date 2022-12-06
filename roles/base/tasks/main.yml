@@ -22,5 +22,8 @@
 
 - name: Include OS-specific tasks
   block:
-    - include_tasks: "{{ ansible_distribution }}.yml"
+    - include_tasks: "homebrew.yml"
+    - include_tasks: "apps.yml"
+    - include_tasks: "unix.yaml"
+    - include_tasks: "defaults.yml"
   when: ansible_distribution == 'MacOSX'

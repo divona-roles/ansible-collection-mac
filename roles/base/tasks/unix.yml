@@ -22,7 +22,7 @@
 
 - name: User | Create binary directory
   ansible.builtin.file:
-    path: /home/{{ user }}/bin
+    path: /Users/{{ user }}/bin
     owner: "{{ user }}"
     group: "{{ user }}"
     state: directory
@@ -30,7 +30,7 @@
 
 - name: User | Create configuration directory
   ansible.builtin.file:
-    path: /home/{{ user }}/etc
+    path: /Users/{{ user }}/etc
     owner: "{{ user }}"
     group: "{{ user }}"
     state: directory
@@ -38,7 +38,7 @@
 
 - name: User | Create XDG directories
   ansible.builtin.file:
-    path: /home/{{ user }}/{{ item }}
+    path: /Users/{{ user }}/{{ item }}
     owner: "{{ user }}"
     group: "{{ user }}"
     state: directory
@@ -47,7 +47,7 @@
 
 - name: User | Create user directories
   ansible.builtin.file:
-    path: /home/{{ user }}/{{ item }}
+    path: /Users/{{ user }}/{{ item }}
     owner: "{{ user }}"
     group: "{{ user }}"
     state: directory

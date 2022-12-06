@@ -13,44 +13,51 @@
 # limitations under the License.
 
 ---
-- name: Install | Web applications
-  homebrew_cask:
-    name: "{{ packages }}"
+- name: System | Ensure configured taps are tapped.
+  community.general.homebrew_tap:
+    name: '{{ item.name | default(item) }}'
+    url: '{{ item.url | default(omit) }}'
     state: present
-  vars:
-    packages:
-      - chromium
-      - brave
+  loop: "{{ homebrew_taps_desktop }}"
 
-- name: Install | Graphics applications
-  homebrew_cask:
+- name: Install | Web applications
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
-      - gimp
+      - google-chrome
+      # - brave
+
+# - name: Install | Graphics applications
+#   community.general.homebrew_cask:
+#     name: "{{ packages }}"
+#     state: present
+#   vars:
+#     packages:
+#       - gimp
 
 - name: Install | Video applications
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
       - vlc
-      - iina
 
 - name: Install | Communications applications
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
-      - hexchat
+      - slack
 
 - name: Install | Security tools
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
-      - keepassxc
+      - 1password
+      - age

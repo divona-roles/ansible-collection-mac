@@ -1,0 +1,152 @@
+# Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+---
+- name: General | Set language and text formats 1/4
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleLanguages
+    type: array
+    value:
+      - en
+      - fr-FR
+      - fr
+    state: present
+
+- name: General | Set language and text formats 2/4
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleLocale
+    type: string
+    value: fr_FR
+    state: present
+
+- name: General | Set language and text formats 3/4
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleMeasurementUnits
+    type: string
+    value: Centimeters
+    state: present
+
+- name: General | Set language and text formats 4/4
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleMetricUnits
+    type: bool
+    value: true
+    state: present
+
+- name: Screen saver | Require password immediately after sleep or screen saver begins
+  community.general.osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPassword
+    type: int
+    value: 1
+    state: present
+
+- name: Screen saver | Require password immediately after sleep or screen saver begins
+  community.general.osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPasswordDelay
+    type: int
+    value: 0
+    state: present
+
+- name: UI | Dark mode
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleInterfaceStyle
+    type: string
+    value: Dark
+    state: present
+
+- name: UI | Show battery percentage
+  community.general.osx_defaults:
+    domain: com.apple.menuextra.battery
+    key: ShowPercent
+    type: bool
+    value: true
+    state: present
+
+- name: Screenshots | Save screenshots to a directory
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: "{{ ansible_env.HOME }}/Pictures"
+    state: present
+
+- name: USB volumes | Avoid creating .DS_Store files on network volumes
+  community.general.osx_defaults:
+    domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    type: bool
+    value: true
+    state: present
+
+- name: USB volumes | Avoid creating .DS_Store files on USB volumes
+  community.general.osx_defaults:
+    domain: com.apple.desktopservices
+    key: DSDontWriteUSBStores
+    type: bool
+    value: true
+    state: present
+
+- name: Menu bar | Setup
+  community.general.osx_defaults:
+    domain: com.apple.systemuiserver
+    key: menuExtras
+    type: array
+    value:
+      - "/System/Library/CoreServices/Menu Extras/Clock.menu"
+      - "/System/Library/CoreServices/Menu Extras/Battery.menu"
+      - "/System/Library/CoreServices/Menu Extras/AirPort.menu"
+      - "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
+      - "/System/Library/CoreServices/Menu Extras/Volume.menu"
+      - "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
+    state: present
+  notify: killall systemuiserver
+
+- name: Menu bar | Show volume
+  community.general.osx_defaults:
+    domain: com.apple.systemuiserver
+    key: "NSStatusItem Visible com.apple.menuextra.volume"
+    type: bool
+    value: true
+    state: present
+  notify: killall systemuiserver
+
+- name: Menu bar | Show Time Machine
+  community.general.osx_defaults:
+    domain: com.apple.systemuiserver
+    key: "NSStatusItem Visible com.apple.menuextra.TimeMachine"
+    type: bool
+    value: true
+    state: present
+  notify: killall systemuiserver
+
+- name: Trackpad | Enable tap to click for this user and for the login screen
+  community.general.osx_defaults:
+    domain: "{{ item.domain }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+    host: "{{ item.host | default(omit) }}"
+    state: present
+  with_items:
+    - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking, type: int, value: 1 }
+    - { domain: com.apple.AppleBluetoothMultitouch.trackpad, key: Clicking, type: bool, value: true }
+    - { domain: NSGlobalDomain, key: com.apple.mouse.tapBehavior, type: int, host: currentHost, value: 1 }
+    - { domain: NSGlobalDomain, key: com.apple.mouse.tapBehavior, type: int, value: 1 }

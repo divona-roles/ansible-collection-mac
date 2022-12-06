@@ -13,18 +13,35 @@
 # limitations under the License.
 
 ---
-# - name: Add specific folders to dock
-#   command: defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>{{ item }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-#   with_items:
-#     - "/Users/{{ user }}/Documents"
-#     - "/Users/{{ user }}/Projects"
-#     - "/Users/{{ user }}/Applications"
+- name: System | Ensure configured taps are tapped.
+  community.general.homebrew_tap:
+    name: '{{ item.name | default(item) }}'
+    url: '{{ item.url | default(omit) }}'
+    state: present
+  loop: "{{ homebrew_taps_desktop }}"
 
 - name: Install | Windows manager
-  homebrew:
+  community.general.homebrew:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
-      # - koekeishiya/formulae/kwm
-      - amethyst
+      - yabai
+      - skhd
+      # - amethyst
+      # - rectangle
+
+- name: Install | Windows manager tools
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - font-hack-nerd-font
+      - sketchybar
+
+# - name: System | Restart yabai
+#   ansible.builtin.command: brew services restart yabai
+
+# - name: System | Restart skhd
+#   ansible.builtin.command: brew services restart skhd

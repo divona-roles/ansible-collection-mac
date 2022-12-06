@@ -13,37 +13,5 @@
 # limitations under the License.
 
 ---
-######################################################
-# MAS
-
-mas_email: ""
-mas_password: ""
-mas_uninstalled_apps: []
-mas_installed_app_ids: []  # Deprecated
-mas_installed_apps:
-  - {id: 425264550, name: "Blackmagic Disk Speed Test (3.0)"}
-  - {id: 411643860, name: "DaisyDisk (4.3.2)"}
-  - {id: 498486288, name: "Quick Resizer (1.9)"}
-  - {id: 497799835, name: "Xcode (8.1)"}
-mas_upgrade_all_apps: false
-mas_signin_dialog: false
-
-# Dock items to remove.
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-
-# Dock items to add. `pos` parameter is optional and will place the Dock item
-# in a particular position in the Dock.
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
-
-# Which homebrew cask to install for dockutil
-dockutil_homebrew_cask: hpedrorodrigues/tools/dockutil
-
-# Whether to install dockutil or not
-dockutil_install: true
+homebrew_taps_desktop:
+  - koekeishiya/formulae

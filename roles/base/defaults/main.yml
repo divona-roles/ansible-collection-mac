@@ -24,18 +24,11 @@ homebrew_prefix: "/opt/homebrew"
 homebrew_install_path: "{{ homebrew_prefix }}/Homebrew"
 homebrew_brew_bin_path: "{{ homebrew_prefix }}/bin"
 
-homebrew_installed_packages: []
-
-homebrew_uninstalled_packages: []
-
 homebrew_upgrade_all_packages: false
 
 homebrew_taps:
   - homebrew/core
-
-homebrew_cask_apps: []
-
-homebrew_cask_uninstalled_apps: []
+  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_accept_external_apps: false
@@ -59,7 +52,6 @@ user_dirs:
   - Work
 
 xdg_dirs:
-  - Desktop
   - Documents
   - Downloads
   - Music
@@ -67,3 +59,14 @@ xdg_dirs:
   - Public
   - Templates
   - Videos
+
+dock_applications:
+  - /System/Applications/Launchpad.app
+  - /Applications/iTerm.app
+  - /System/Applications/Messages.app
+  - /System/Applications/Calendar.app
+  - /System/Applications/Notes.app
+  - /System/Applications/Photos.app
+  - /Applications/Spotify.app
+  - "\"/System/Applications/App Store.app\""
+  - "\"/System/Applications/System Preferences.app\""

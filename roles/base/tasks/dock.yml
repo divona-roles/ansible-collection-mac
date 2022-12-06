@@ -1,0 +1,95 @@
+# Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+---
+- name: Dock | Not rearrange Spaces based on most recent use
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: mru-spaces
+    type: bool
+    value: false
+    state: present
+  notify: killall dock
+
+- name: Dock | Automatically hide and show the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+    state: present
+  notify: killall dock
+
+- name: Dock | Not show recent applications in Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+    state: present
+  notify: killall dock
+
+# - name: Dock | Orientation left
+#   community.general.osx_defaults:
+#     domain: com.apple.dock
+#     key: orientation
+#     type: string
+#     value: left
+#     state: present
+#   notify: killall dock
+
+- name: Dock | Set size of icons
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: integer
+    value: 33
+    state: present
+  notify: killall dock
+
+- name: Dock | Hot corners
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: wvous-br-corner
+    type: int
+    value: 13 # Lock the screen
+    state: present
+  notify: killall dock
+
+- name: Dock | Hot corners
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: wvous-bl-modifier
+    type: int
+    value: 0
+    state: present
+  notify: killall dock
+
+- name: Dock | Not show Dashboard as a Space
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: dashboard-in-overlay
+    type: bool
+    value: true
+    state: present
+  notify: killall dock
+
+- name: Dock | Reset Launchpad
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: ResetLaunchPad
+    type: bool
+    value: true
+    state: present
+  notify: killall dock

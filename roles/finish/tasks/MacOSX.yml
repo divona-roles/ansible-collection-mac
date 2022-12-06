@@ -14,5 +14,5 @@
 
 ---
 - name: Cleanup Homebrew cask
-  command: "brew cleanup"
+  ansible.builtin.command: "brew cleanup"
   tags: cache
