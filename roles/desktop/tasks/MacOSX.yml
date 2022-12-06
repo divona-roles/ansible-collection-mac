@@ -45,6 +45,14 @@
     packages:
       - vlc
 
+- name: Install | Music applications
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - spotify
+
 - name: Install | Communications applications
   community.general.homebrew_cask:
     name: "{{ packages }}"
@@ -61,3 +69,4 @@
     packages:
       - 1password
       - age
+      - wireshark

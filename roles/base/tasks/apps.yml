@@ -13,6 +13,13 @@
 # limitations under the License.
 
 ---
+- name: Packages | Install Mac App Store CLI
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - mas
+
 - name: Packages | Install shell tools
   community.general.homebrew:
     name: "{{ item }}"
@@ -22,15 +29,15 @@
     - tmux
     - ncdu
 
-# - name: Packages | Install libraries with homebrew
-#   community.general.homebrew:
-#     name: "{{ item }}"
-#     state: present
-#   with_items:
-#     - git
-#     - gpg2
-#     - pinentry
-#     - wget
+- name: Packages | Install basic tools
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - git
+    - gpg2
+    - pinentry
+    - wget
 
 - name: Packages | Install modern Unix tools
   community.general.homebrew:
