@@ -35,4 +35,3 @@
 #   community.general.homebrew:
 #     name: qemu
 #     state: present
-#     accept_external_apps: true
