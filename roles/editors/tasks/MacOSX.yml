@@ -17,16 +17,13 @@
   community.general.homebrew_cask:
     name: emacs
     state: present
-    accept_external_apps: true
 
 - name: VSCode | Install
   community.general.homebrew_cask:
     name: visual-studio-code
     state: present
-    accept_external_apps: true
 
 - name: VimR | Install
   community.general.homebrew_cask:
     name: vimr
     state: present
-    accept_external_apps: true
