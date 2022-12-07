@@ -18,7 +18,7 @@
     path: /Users/{{ user }}/Applications
     state: directory
     owner: "{{ user }}"
-    group: "{{ user }}"
+    # group: "{{ user }}"
     # recurse: true
 
 - name: Directory | Change user binaries directory rights
@@ -26,5 +26,5 @@
     path: /Users/{{ user }}/bin
     state: directory
     owner: "{{ user }}"
-    group: "{{ user }}"
+    # group: "{{ user }}"
     # recurse: true

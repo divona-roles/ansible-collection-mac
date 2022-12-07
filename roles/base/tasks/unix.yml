@@ -24,7 +24,7 @@
   ansible.builtin.file:
     path: /Users/{{ user }}/bin
     owner: "{{ user }}"
-    group: "{{ user }}"
+    # group: "{{ user }}"
     state: directory
     mode: 0755
 
@@ -32,7 +32,7 @@
   ansible.builtin.file:
     path: /Users/{{ user }}/etc
     owner: "{{ user }}"
-    group: "{{ user }}"
+    # group: "{{ user }}"
     state: directory
     mode: 0755
 
@@ -40,7 +40,7 @@
   ansible.builtin.file:
     path: /Users/{{ user }}/{{ item }}
     owner: "{{ user }}"
-    group: "{{ user }}"
+    # group: "{{ user }}"
     state: directory
     mode: 0755
   loop: "{{ xdg_dirs }}"
@@ -49,7 +49,7 @@
   ansible.builtin.file:
     path: /Users/{{ user }}/{{ item }}
     owner: "{{ user }}"
-    group: "{{ user }}"
+    # group: "{{ user }}"
     state: directory
     mode: 0755
   loop: "{{ user_dirs }}"
