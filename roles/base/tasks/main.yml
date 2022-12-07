@@ -24,6 +24,6 @@
   block:
     - include_tasks: "homebrew.yml"
     - include_tasks: "apps.yml"
-    - include_tasks: "unix.yaml"
+    - include_tasks: "unix.yml"
     - include_tasks: "defaults.yml"
   when: ansible_distribution == 'MacOSX'
