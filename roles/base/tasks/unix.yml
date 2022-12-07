@@ -17,7 +17,7 @@
   ansible.builtin.user:
     name: "{{ user }}"
     shell: /bin/zsh
-    groups: users
+    groups: admin
     append: true
 
 - name: User | Create binary directory
