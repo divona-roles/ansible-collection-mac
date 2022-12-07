@@ -24,6 +24,7 @@
   community.general.homebrew:
     name: "{{ packages }}"
     state: present
+    accept_external_apps: true
   vars:
     packages:
       - yabai

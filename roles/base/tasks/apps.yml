@@ -15,44 +15,50 @@
 ---
 - name: Packages | Install management tools
   community.general.homebrew:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: present
-  with_items:
-    - mas
-    - asdf
+    accept_external_apps: true
+  vars:
+    packages:
+      - mas
+      - asdf
 
 - name: Packages | Install terminal emulators
   community.general.homebrew:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: present
-  with_items:
-    - iterm2
-    - alacritty
+  vars:
+    packages:
+      - iterm2
+      - alacritty
 
 - name: Packages | Install shell tools
   community.general.homebrew:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: present
-  with_items:
-    - fzf
-    - tmux
-    - ncdu
+  vars:
+    packages:
+      - fzf
+      - tmux
+      - ncdu
 
 - name: Packages | Install basic tools
   community.general.homebrew:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: present
-  with_items:
-    - git
-    - gpg2
-    - pinentry
-    - wget
+  vars:
+    packages:
+      - git
+      - gpg2
+      - pinentry
+      - wget
 
 - name: Packages | Install modern Unix tools
   community.general.homebrew:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: present
-  with_items:
-    - ripgrep
-    - exa
-    - fd
+  vars:
+    packages:
+      - ripgrep
+      - exa
+      - fd

@@ -17,21 +17,25 @@
   community.general.homebrew_cask:
     name: virtualbox
     state: present
+    accept_external_apps: true
 
 - name: HomeBrew | Install Vagrant
   community.general.homebrew_cask:
     name: vagrant
     state: present
+    accept_external_apps: true
 
 - name: HomeBrew | Install Docker tools
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
+    accept_external_apps: true
   vars:
     packages:
       - dockertoolbox
 
-- name: HomeBrew | Install QEmu
-  community.general.homebrew:
-    name: qemu
-    state: present
+# - name: HomeBrew | Install QEmu
+#   community.general.homebrew:
+#     name: qemu
+#     state: present
+#     accept_external_apps: true

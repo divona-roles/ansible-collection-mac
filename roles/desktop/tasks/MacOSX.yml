@@ -24,6 +24,7 @@
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
+    accept_external_apps: true
   vars:
     packages:
       - google-chrome
@@ -41,6 +42,7 @@
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
+    accept_external_apps: true
   vars:
     packages:
       - vlc
@@ -49,6 +51,7 @@
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
+    accept_external_apps: true
   vars:
     packages:
       - spotify
@@ -57,6 +60,7 @@
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
+    accept_external_apps: true
   vars:
     packages:
       - slack
@@ -65,6 +69,7 @@
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
+    accept_external_apps: true
   vars:
     packages:
       - 1password
