@@ -30,14 +30,14 @@
       - skhd
       # - amethyst
       # - rectangle
+      - font-hack-nerd-font
 
-- name: Install | Windows manager tools
-  community.general.homebrew:
+- name: Install | Windows manager addons
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
-      - font-hack-nerd-font
       - sketchybar
 
 # - name: System | Restart yabai
