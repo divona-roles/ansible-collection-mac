@@ -26,7 +26,6 @@
   community.general.homebrew:
     name: "{{ packages }}"
     state: present
-    accept_external_apps: true
   vars:
     packages:
       - iterm2
