@@ -27,3 +27,5 @@
     - include_tasks: "unix.yaml"
     - include_tasks: "defaults.yml"
   when: ansible_distribution == 'MacOSX'
+  become: true
+  become_user: root
