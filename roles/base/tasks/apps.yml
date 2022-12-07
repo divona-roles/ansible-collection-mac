@@ -23,7 +23,7 @@
       - asdf
 
 - name: Packages | Install terminal emulators
-  community.general.homebrew:
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
