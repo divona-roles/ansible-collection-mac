@@ -21,7 +21,7 @@
   loop: "{{ homebrew_taps_desktop }}"
 
 - name: Install | Windows manager
-  community.general.homebrew:
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
@@ -30,7 +30,6 @@
       - skhd
       # - amethyst
       # - rectangle
-      - font-hack-nerd-font
 
 - name: Install | Windows manager addons
   community.general.homebrew_cask:
@@ -39,6 +38,7 @@
   vars:
     packages:
       - sketchybar
+      - font-hack-nerd-font
 
 # - name: System | Restart yabai
 #   ansible.builtin.command: brew services restart yabai
