@@ -21,7 +21,7 @@
   loop: "{{ homebrew_taps_desktop }}"
 
 - name: Install | Windows manager
-  community.general.homebrew_cask:
+  community.general.homebrew:
     name: "{{ packages }}"
     state: present
   vars:
