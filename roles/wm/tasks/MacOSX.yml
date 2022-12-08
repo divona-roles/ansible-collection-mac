@@ -32,12 +32,19 @@
       # - rectangle
 
 - name: Install | Windows manager addons
-  community.general.homebrew_cask:
+  community.general.homebrew:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
       - sketchybar
+
+- name: Install | Windows manager addons (cask)
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
       - font-hack-nerd-font
 
 # - name: System | Restart yabai
