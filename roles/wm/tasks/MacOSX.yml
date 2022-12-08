@@ -40,7 +40,7 @@
       - sketchybar
 
 - name: Install | Windows manager addons (cask)
-  community.general.homebrew:
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
