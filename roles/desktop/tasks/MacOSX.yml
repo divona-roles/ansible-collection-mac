@@ -29,13 +29,14 @@
       - google-chrome
       # - brave
 
-# - name: Install | Graphics applications
-#   community.general.homebrew_cask:
-#     name: "{{ packages }}"
-#     state: present
-#   vars:
-#     packages:
-#       - gimp
+- name: Install | Graphics applications
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - gimp
+      - flameshot
 
 - name: Install | Video applications
   community.general.homebrew_cask:
@@ -61,12 +62,19 @@
     packages:
       - slack
 
-- name: Install | Security tools
+- name: Install | Security tools (Cask)
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
       - 1password
-      - age
       - wireshark
+
+- name: Install | Security tools
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - age
