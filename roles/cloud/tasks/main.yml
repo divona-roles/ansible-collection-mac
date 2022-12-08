@@ -19,8 +19,3 @@
   when: ansible_distribution == 'MacOSX'
   become: true
   become_user: root
-
-- name: Cloud for MacOSX
-  block:
-    - include_tasks: cloud_osx.yml
-  when: ansible_distribution == 'MacOSX'

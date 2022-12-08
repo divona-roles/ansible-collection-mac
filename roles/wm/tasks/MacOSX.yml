@@ -46,6 +46,7 @@
   vars:
     packages:
       - font-hack-nerd-font
+      - sf-symbols
 
 # - name: System | Restart yabai
 #   ansible.builtin.command: brew services restart yabai

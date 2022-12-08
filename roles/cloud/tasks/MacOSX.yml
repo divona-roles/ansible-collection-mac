@@ -13,25 +13,10 @@
 # limitations under the License.
 
 ---
-- name: HomeBrew | Install Virtualbox
-  community.general.homebrew_cask:
-    name: virtualbox
-    state: present
-
-- name: HomeBrew | Install Vagrant
-  community.general.homebrew_cask:
-    name: vagrant
-    state: present
-
 - name: HomeBrew | Install Docker tools
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
-      - dockertoolbox
-
-# - name: HomeBrew | Install QEmu
-#   community.general.homebrew:
-#     name: qemu
-#     state: present
+      - docker
