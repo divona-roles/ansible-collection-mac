@@ -20,3 +20,12 @@
 #   vars:
 #     packages:
 #       - docker
+
+- name: HomeBrew | Git cloud tools
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - gh
+      - glab
