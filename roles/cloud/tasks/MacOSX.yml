@@ -29,3 +29,21 @@
     packages:
       - gh
       - glab
+
+- name: Homebrew | Container tools
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - nerdctl
+      - lima
+      - colima
+
+- name: Homebrew | Container tools (Cask)
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - finch
