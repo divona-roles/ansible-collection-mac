@@ -12,19 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
-- name: Directories for Unix
-  block:
-    - include_tasks: unix.yml
-  when: ansible_distribution == 'MacOSX'
-  become: true
-  become_user: root
-
-- name: Include OS-specific tasks
-  block:
-    - include_tasks: "homebrew.yml"
-    - include_tasks: "apps.yml"
-    - include_tasks: "unix.yml"
-    - include_tasks: "lang.yml"
-    - include_tasks: "defaults.yml"
-  when: ansible_distribution == 'MacOSX'
+- name: LSP | Install tools
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - bash-language-server
+      - ansible-language-server
+      - gopls
+      - rust-analyzer
+      - terraform-ls

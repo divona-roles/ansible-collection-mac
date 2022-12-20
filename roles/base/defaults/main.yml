@@ -32,6 +32,7 @@ homebrew_taps:
   - homebrew/services
   - homebrew/cask
   - homebrew/cask-fonts
+  - hashicorp/tap
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_accept_external_apps: false
