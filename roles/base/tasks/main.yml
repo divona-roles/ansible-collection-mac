@@ -14,17 +14,23 @@
 
 ---
 - name: Directories for Unix
-  block:
-    - include_tasks: unix.yml
   when: ansible_distribution == 'MacOSX'
   become: true
   become_user: root
+  block:
+    - name: Base | Unix directories
+      ansible.builtin.include_tasks: unix.yml
 
 - name: Include OS-specific tasks
-  block:
-    - include_tasks: "homebrew.yml"
-    - include_tasks: "apps.yml"
-    - include_tasks: "unix.yml"
-    - include_tasks: "lang.yml"
-    - include_tasks: "defaults.yml"
   when: ansible_distribution == 'MacOSX'
+  block:
+    - name: Base | Homebrew
+      ansible.builtin.include_tasks: "homebrew.yml"
+    - name: Base | Applications
+      ansible.builtin.include_tasks: "apps.yml"
+    - name: Base | Unix
+      ansible.builtin.include_tasks: "unix.yml"
+    - name: Base | Languages
+      ansible.builtin.include_tasks: "lang.yml"
+    - name: Base | Defaults
+      ansible.builtin.include_tasks: "defaults.yml"

@@ -20,7 +20,7 @@
     type: bool
     value: true
     state: present
-  notify: killall finder
+  notify: Killall finder
 
 - name: Finder | Show hidden files
   community.general.osx_defaults:
@@ -29,7 +29,7 @@
     type: bool
     value: true
     state: present
-  notify: killall finder
+  notify: Killall finder
 
 - name: Finder | Show all filename extensions
   community.general.osx_defaults:
@@ -38,7 +38,7 @@
     type: bool
     value: true
     state: present
-  notify: killall finder
+  notify: Killall finder
 
 - name: Finder | Show status bar
   community.general.osx_defaults:
@@ -47,7 +47,7 @@
     type: bool
     value: true
     state: present
-  notify: killall finder
+  notify: Killall finder
 
 - name: Finder | Show path bar
   community.general.osx_defaults:
@@ -64,7 +64,7 @@
     type: string
     value: Nlsv
     state: present
-  notify: killall finder
+  notify: Killall finder
 
 - name: Finder | Keep folders on top when sorting by name
   community.general.osx_defaults:
@@ -81,7 +81,7 @@
     type: string
     value: SCcf
     state: present
-  notify: killall finder
+  notify: Killall finder
 
 - name: Finder | Disable the warning when changing a file extension
   community.general.osx_defaults:
@@ -90,7 +90,7 @@
     type: bool
     value: false
     state: present
-  notify: killall finder
+  notify: Killall finder
 
 - name: Finder | Disable disable Recent Tags
   community.general.osx_defaults:
@@ -99,15 +99,15 @@
     type: bool
     value: false
     state: present
-  notify: killall finder
+  notify: Killall finder
 
 - name: Show the ~/Library folder
   ansible.builtin.command: chflags nohidden ~/Library
   changed_when: true
-  notify: killall finder
+  notify: Killall finder
 
 - name: Show the /Volumes folder
   ansible.builtin.command: chflags nohidden /Volumes
-  become: yes
+  become: true
   changed_when: true
-  notify: killall finder
+  notify: Killall finder

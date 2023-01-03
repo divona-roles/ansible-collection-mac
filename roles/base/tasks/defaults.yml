@@ -117,7 +117,7 @@
       - "/System/Library/CoreServices/Menu Extras/Volume.menu"
       - "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
     state: present
-  notify: killall systemuiserver
+  notify: Killall systemuiserver
 
 - name: Menu bar | Show volume
   community.general.osx_defaults:
@@ -126,7 +126,7 @@
     type: bool
     value: true
     state: present
-  notify: killall systemuiserver
+  notify: Killall systemuiserver
 
 - name: Menu bar | Show Time Machine
   community.general.osx_defaults:
@@ -135,7 +135,7 @@
     type: bool
     value: true
     state: present
-  notify: killall systemuiserver
+  notify: Killall systemuiserver
 
 - name: Trackpad | Enable tap to click for this user and for the login screen
   community.general.osx_defaults:

@@ -19,7 +19,7 @@
     state: directory
     owner: "{{ user }}"
     # group: "{{ user }}"
-    # recurse: true
+    mode: 0755
 
 - name: Directory | Change user binaries directory rights
   ansible.builtin.file:
@@ -27,4 +27,4 @@
     state: directory
     owner: "{{ user }}"
     # group: "{{ user }}"
-    # recurse: true
+    mode: 0755
