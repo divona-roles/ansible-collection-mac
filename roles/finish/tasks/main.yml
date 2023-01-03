@@ -15,10 +15,10 @@
 ---
 - name: Include OS-specific tasks
   block:
-    - include_tasks: "{{ ansible_distribution }}.yml"
+    - ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
   when: ansible_distribution == 'MacOSX'
 
 - name: Include Unix specific tasks
   block:
-    - include_tasks: "unix.yml"
+    - ansible.builtin.include_tasks: "unix.yml"
   when: ansible_distribution == 'MacOSX'
