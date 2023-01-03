@@ -26,14 +26,14 @@
 - name: Killall dock
   ansible.builtin.command: killall Dock
   become: true
-  ignore_errors: true
+  failed_when: false
 
 - name: Killall finder
   ansible.builtin.command: killall Finder
   become: true
-  ignore_errors: true
+  failed_when: false
 
 - name: Killall systemuiserver
   ansible.builtin.command: killall SystemUIServer
   become: true
-  ignore_errors: true
+  failed_when: false
