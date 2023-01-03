@@ -22,6 +22,7 @@
   ansible.builtin.file:
     path: "{{ homebrew_prefix }}"
     owner: "{{ homebrew_user }}"
+    group: "{{ homebrew_group }}"
     state: directory
   become: true
 
@@ -64,7 +65,8 @@
 
 # Place brew binary in proper location and complete setup.
 - name: System | Check if homebrew binary is already in place.
-  ansible.builtin.stat: "path={{ homebrew_brew_bin_path }}/brew"
+  ansible.builtin.stat:
+    path: "{{ homebrew_brew_bin_path }}/brew"
   register: homebrew_binary
   check_mode: false
 
@@ -72,6 +74,8 @@
   ansible.builtin.file:
     src: "{{ homebrew_install_path }}/bin/brew"
     dest: "{{ homebrew_brew_bin_path }}/brew"
+    owner: "{{ homebrew_user }}"
+    group: "{{ homebrew_group }}"
     state: link
   when: not homebrew_binary.stat.exists
   become: true
@@ -142,8 +146,8 @@
 
     - name: Upgrade all homebrew packages (if configured).
       community.general.homebrew:
-        update_homebrew: yes
-        upgrade_all: yes
+        update_homebrew: true
+        upgrade_all: true
       when: homebrew_upgrade_all_packages
       notify:
         - Clear homebrew cache

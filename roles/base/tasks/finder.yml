@@ -108,6 +108,6 @@
 
 - name: Show the /Volumes folder
   ansible.builtin.command: chflags nohidden /Volumes
-  become: yes
+  become: true
   changed_when: true
   notify: Killall finder
