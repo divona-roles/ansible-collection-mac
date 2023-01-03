@@ -20,7 +20,7 @@
     type: bool
     value: false
     state: present
-  notify: killall dock
+  notify: Killall dock
 
 - name: Dock | Automatically hide and show the Dock
   community.general.osx_defaults:
@@ -29,7 +29,7 @@
     type: bool
     value: true
     state: present
-  notify: killall dock
+  notify: Killall dock
 
 - name: Dock | Not show recent applications in Dock
   community.general.osx_defaults:
@@ -38,7 +38,7 @@
     type: bool
     value: false
     state: present
-  notify: killall dock
+  notify: Killall dock
 
 # - name: Dock | Orientation left
 #   community.general.osx_defaults:
@@ -47,7 +47,7 @@
 #     type: string
 #     value: left
 #     state: present
-#   notify: killall dock
+#   notify: Killall dock
 
 - name: Dock | Set size of icons
   community.general.osx_defaults:
@@ -56,7 +56,7 @@
     type: integer
     value: 33
     state: present
-  notify: killall dock
+  notify: Killall dock
 
 - name: Dock | Hot corners
   community.general.osx_defaults:
@@ -65,7 +65,7 @@
     type: int
     value: 13 # Lock the screen
     state: present
-  notify: killall dock
+  notify: Killall dock
 
 - name: Dock | Hot corners
   community.general.osx_defaults:
@@ -74,7 +74,7 @@
     type: int
     value: 0
     state: present
-  notify: killall dock
+  notify: Killall dock
 
 - name: Dock | Not show Dashboard as a Space
   community.general.osx_defaults:
@@ -83,7 +83,7 @@
     type: bool
     value: true
     state: present
-  notify: killall dock
+  notify: Killall dock
 
 - name: Dock | Reset Launchpad
   community.general.osx_defaults:
@@ -92,4 +92,4 @@
     type: bool
     value: true
     state: present
-  notify: killall dock
+  notify: Killall dock
