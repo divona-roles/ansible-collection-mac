@@ -83,13 +83,13 @@
     state: link
 
 - name: System | Ensure proper homebrew folders are in place.
+  become: true
   ansible.builtin.file:
     path: "{{ homebrew_prefix }}/{{ item }}"
     owner: "{{ homebrew_user }}"
     group: "{{ homebrew_group }}"
     state: directory
     mode: 0775
-  become: true
   loop: "{{ homebrew_folders_base + homebrew_folders_additional }}"
 
 - name: System | Apply homebrew
