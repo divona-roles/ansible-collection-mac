@@ -93,6 +93,10 @@
   loop: "{{ homebrew_folders_base + homebrew_folders_additional }}"
 
 - name: System | Apply homebrew
+  # Privilege escalation is only required for inner steps when
+  # the `homebrew_user` doesn't match the `ansible_user_id`
+  become: "{{ (homebrew_user != ansible_user_id) | bool }}"
+  become_user: "{{ homebrew_user }}"
   block:
     - name: Force update brew after installation.
       when: not homebrew_binary.stat.exists
@@ -164,8 +168,3 @@
     - name: Install from Brewfile.
       when: homebrew_brewfile.stat.exists and homebrew_use_brewfile
       ansible.builtin.command: "{{ homebrew_brew_bin_path }}/brew bundle chdir={{ homebrew_brewfile_dir }}"
-
-  # Privilege escalation is only required for inner steps when
-  # the `homebrew_user` doesn't match the `ansible_user_id`
-  become: "{{ (homebrew_user != ansible_user_id) | bool }}"
-  become_user: "{{ homebrew_user }}"
