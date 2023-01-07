@@ -48,3 +48,11 @@
   vars:
     packages:
       - finch
+
+- name: Homebrew | Virtual Machines tools (Cask)
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - utm
