@@ -14,5 +14,11 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+---
+exclude_paths:
+  - .cache/  # implicit unless exclude_paths is defined in config
+  - .github/
+  - .ansible-lint
+
 skip_list:
   - name[template]

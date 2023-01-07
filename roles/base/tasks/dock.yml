@@ -65,7 +65,7 @@
     domain: com.apple.dock
     key: wvous-br-corner
     type: int
-    value: 13 # Lock the screen
+    value: 13
     state: present
   notify: Killall dock
 

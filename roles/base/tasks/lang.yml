@@ -14,6 +14,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+---
 - name: LSP | Install tools
   community.general.homebrew:
     name: "{{ packages }}"
