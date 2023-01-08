@@ -15,14 +15,6 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-- name: Directories for Unix
-  when: ansible_distribution == 'MacOSX'
-  become: true
-  become_user: root
-  block:
-    - name: Base | Unix directories
-      ansible.builtin.include_tasks: unix.yml
-
 - name: Include OS-specific tasks
   when: ansible_distribution == 'MacOSX'
   block:
