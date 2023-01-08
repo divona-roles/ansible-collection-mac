@@ -42,7 +42,7 @@
       - colima
 
 - name: Homebrew | Container tools (Cask)
-  community.general.homebrew:
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
@@ -50,7 +50,7 @@
       - finch
 
 - name: Homebrew | Virtual Machines tools (Cask)
-  community.general.homebrew:
+  community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
   vars:
