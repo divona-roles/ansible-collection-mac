@@ -33,7 +33,7 @@
       - iterm2
       - alacritty
 
-- name: Packages | Install shell tools
+- name: Packages | Install core tools
   community.general.homebrew:
     name: "{{ packages }}"
     state: present
@@ -42,17 +42,12 @@
       - fzf
       - tmux
       - ncdu
-
-- name: Packages | Install basic tools
-  community.general.homebrew:
-    name: "{{ packages }}"
-    state: present
-  vars:
-    packages:
       - git
       - gpg2
       - pinentry
       - wget
+      - gitui
+      - starship
 
 - name: Packages | Install modern Unix tools
   community.general.homebrew:
