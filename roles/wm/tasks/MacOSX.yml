@@ -51,6 +51,7 @@
       - font-hack-nerd-font
       - font-fira-code-nerd-font
       - font-material-icons
+      - font-sf-mono-nerd-font-ligaturized
       - sf-symbols
 
 # - name: System | Restart yabai

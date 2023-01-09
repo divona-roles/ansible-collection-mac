@@ -20,3 +20,4 @@
 homebrew_taps_desktop:
   - koekeishiya/formulae
   - FelixKratz/formulae
+  - shaunsingh/SFMono-Nerd-Font-Ligaturized
