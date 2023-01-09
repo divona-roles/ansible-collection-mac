@@ -39,6 +39,7 @@
     packages:
       - gimp
       - flameshot
+      - monitorcontrol
 
 - name: Install | Video applications
   community.general.homebrew_cask:
