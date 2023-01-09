@@ -39,6 +39,7 @@
     packages:
       - gimp
       - flameshot
+      - monitorcontrol
 
 - name: Install | Video applications
   community.general.homebrew_cask:
@@ -63,6 +64,7 @@
   vars:
     packages:
       - slack
+      - meetingbar
 
 - name: Install | Security tools (Cask)
   community.general.homebrew_cask:
@@ -80,3 +82,12 @@
   vars:
     packages:
       - age
+
+- name: Install | Networking tools (Cask)
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - lulu
+      - sloth
