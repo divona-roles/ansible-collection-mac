@@ -74,6 +74,7 @@
     packages:
       - 1password
       - wireshark
+      - rustscan
 
 - name: Install | Security tools
   community.general.homebrew:

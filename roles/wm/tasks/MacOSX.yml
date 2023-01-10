@@ -59,3 +59,9 @@
 
 # - name: System | Restart skhd
 #   ansible.builtin.command: brew services restart skhd
+
+- name: Fonts | Install sketchybar-app-font
+  ansible.builtin.get_url:
+    url: https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf
+    dest: /Users/{{ user }}/Library/Fonts/sketchybar-app-font.ttf
+    mode: '0440'
