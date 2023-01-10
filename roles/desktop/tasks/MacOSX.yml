@@ -22,6 +22,23 @@
     state: present
   loop: "{{ homebrew_taps_desktop }}"
 
+- name: Install | Finder tools
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - zoxide
+
+- name: Install | Finder tools (Cask)
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - openinterminal
+      - ueli
+
 - name: Install | Web applications
   community.general.homebrew_cask:
     name: "{{ packages }}"
@@ -73,8 +90,10 @@
   vars:
     packages:
       - 1password
+      - bitwarden
       - wireshark
       - rustscan
+      - tailscale
 
 - name: Install | Security tools
   community.general.homebrew:
@@ -92,3 +111,10 @@
     packages:
       - lulu
       - sloth
+
+- name: Install | System tools (Cask)
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
