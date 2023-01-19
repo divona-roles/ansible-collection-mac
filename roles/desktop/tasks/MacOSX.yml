@@ -47,6 +47,7 @@
     packages:
       - google-chrome
       # - brave
+      - orion
 
 - name: Install | Graphics applications
   community.general.homebrew_cask:
@@ -55,6 +56,7 @@
   vars:
     packages:
       - gimp
+      - inkscape
       - flameshot
       - monitorcontrol
 
@@ -109,6 +111,7 @@
     state: present
   vars:
     packages:
+      - transmission
       - lulu
       - sloth
 

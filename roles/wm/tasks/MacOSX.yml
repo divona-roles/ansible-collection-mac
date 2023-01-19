@@ -39,7 +39,9 @@
     state: present
   vars:
     packages:
+      - alt-tab
       - sketchybar
+      - shottr
 
 - name: Install | Windows manager addons (cask)
   community.general.homebrew_cask:
@@ -52,6 +54,7 @@
       - font-fira-code-nerd-font
       - font-material-icons
       - font-sf-mono-nerd-font-ligaturized
+      - font-inconsolata
       - sf-symbols
 
 # - name: System | Restart yabai

@@ -46,6 +46,7 @@
       - gpg2
       - pinentry
       - wget
+      - aria2
       - gitui
       - starship
 
@@ -58,3 +59,5 @@
       - ripgrep
       - exa
       - fd
+      - bat
+      - duf
