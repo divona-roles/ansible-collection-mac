@@ -118,3 +118,4 @@
     state: present
   vars:
     packages:
+      - stats
