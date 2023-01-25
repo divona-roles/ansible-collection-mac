@@ -43,7 +43,7 @@
       - tmux
       - ncdu
       - git
-      - delta
+      - git-delta
       - gpg2
       - pinentry
       - wget
