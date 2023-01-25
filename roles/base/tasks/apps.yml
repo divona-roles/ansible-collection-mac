@@ -43,6 +43,7 @@
       - tmux
       - ncdu
       - git
+      - delta
       - gpg2
       - pinentry
       - wget
@@ -52,6 +53,8 @@
       - duf
       - dust
       - starship
+      - jq
+      - ifstat
 
 - name: Packages | Install modern Unix tools
   community.general.homebrew:
