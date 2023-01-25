@@ -48,6 +48,9 @@
       - wget
       - aria2
       - gitui
+      - dog
+      - duf
+      - dust
       - starship
 
 - name: Packages | Install modern Unix tools

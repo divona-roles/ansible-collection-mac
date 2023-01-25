@@ -15,14 +15,6 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-# - name: HomeBrew | Install Docker tools
-#   community.general.homebrew_cask:
-#     name: "{{ packages }}"
-#     state: present
-#   vars:
-#     packages:
-#       - docker
-
 - name: HomeBrew | Git cloud tools
   community.general.homebrew:
     name: "{{ packages }}"
