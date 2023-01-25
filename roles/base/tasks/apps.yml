@@ -61,6 +61,7 @@
     packages:
       - ripgrep
       - exa
+      - lsd
       - fd
       - bat
       - duf
