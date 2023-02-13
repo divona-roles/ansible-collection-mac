@@ -41,6 +41,7 @@
     packages:
       - fzf
       - tmux
+      - zellij
       - ncdu
       - git
       - gpg2
@@ -48,6 +49,8 @@
       - wget
       - gitui
       - starship
+      - direnv
+      - bat
 
 - name: Packages | Install modern Unix tools
   community.general.homebrew:

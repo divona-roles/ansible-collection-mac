@@ -90,10 +90,13 @@
   vars:
     packages:
       - 1password
+      - 1password-cli
       - bitwarden
       - wireshark
       - rustscan
       - tailscale
+      - gpg-suite
+      - ykman
 
 - name: Install | Security tools
   community.general.homebrew:
@@ -101,6 +104,7 @@
     state: present
   vars:
     packages:
+      - pinentry-mac
       - age
 
 - name: Install | Networking tools (Cask)
@@ -118,3 +122,4 @@
     state: present
   vars:
     packages:
+      - sol
