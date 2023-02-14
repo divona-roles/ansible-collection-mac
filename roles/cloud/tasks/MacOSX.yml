@@ -40,6 +40,10 @@
     packages:
       - lima
       - colima
+      - docker
+      - docker-compose
+      - krew
+      - kubeseal
 
 - name: Homebrew | Container tools (Cask)
   community.general.homebrew_cask:
