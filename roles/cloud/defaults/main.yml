@@ -18,3 +18,4 @@
 # defaults file for cloud
 homebrew_taps:
   - hashicorp/tap
+  - kwilczynski/homebrew-pkenv

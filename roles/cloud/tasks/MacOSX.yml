@@ -54,3 +54,12 @@
   vars:
     packages:
       - utm
+
+- name: Homebrew | Infrastructure tools
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - tfenv
+      - pkenv

@@ -49,6 +49,14 @@
       # - brave
 
 - name: Install | Graphics applications
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - graphviz
+
+- name: Install | Graphics applications (Cask)
   community.general.homebrew_cask:
     name: "{{ packages }}"
     state: present
