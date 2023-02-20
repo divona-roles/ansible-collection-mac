@@ -15,17 +15,20 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-- name: Emacs | Install
+- name: HomeBrew | Common editors (Cask)
   community.general.homebrew_cask:
-    name: emacs
+    name: "{{ packages }}"
     state: present
+  vars:
+    packages:
+      - emacs
+      - vscode
+      - neovim
 
-- name: VSCode | Install
-  community.general.homebrew_cask:
-    name: visual-studio-code
+- name: HomeBrew | Common editors
+  community.general.homebrew:
+    name: "{{ packages }}"
     state: present
-
-- name: VimR | Install
-  community.general.homebrew_cask:
-    name: vimr
-    state: present
+  vars:
+    packages:
+      - neovim
