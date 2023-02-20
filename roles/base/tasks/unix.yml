@@ -16,12 +16,12 @@
 
 ---
 # TODO: Does not work on Github Action MacOS runner
-- name: System | Ensure user exists
-  ansible.builtin.user:
-    name: "{{ user }}"
-    shell: /bin/zsh
-    groups: admin
-    append: true
+# - name: System | Ensure user exists
+#   ansible.builtin.user:
+#     name: "{{ user }}"
+#     shell: /bin/zsh
+#     groups: admin
+#     append: true
 
 - name: User | Create binary directory
   ansible.builtin.file:
