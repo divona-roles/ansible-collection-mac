@@ -36,8 +36,7 @@
       - docker-compose
       - krew
       - kubeseal
-      - boundary
-      - vault
+      - kubescape-cli
 
 - name: Homebrew | Container tools (Cask)
   community.general.homebrew_cask:
@@ -61,5 +60,7 @@
     state: present
   vars:
     packages:
+      - boundary
+      - vault
       - tfenv
       - pkenv

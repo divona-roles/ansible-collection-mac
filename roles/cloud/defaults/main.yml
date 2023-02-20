@@ -19,3 +19,4 @@
 homebrew_taps:
   - hashicorp/tap
   - kwilczynski/homebrew-pkenv
+  - kubescape/tap
