@@ -22,13 +22,13 @@
     state: present
   loop: "{{ homebrew_taps_desktop }}"
 
-- name: Install | Finder tools
-  community.general.homebrew_cask:
-    name: "{{ packages }}"
-    state: present
-  vars:
-    packages:
-      - zoxide
+# - name: Install | Finder tools
+#   community.general.homebrew_cask:
+#     name: "{{ packages }}"
+#     state: present
+#   vars:
+#     packages:
+#       - zoxide
 
 - name: Install | Finder tools (Cask)
   community.general.homebrew_cask:
