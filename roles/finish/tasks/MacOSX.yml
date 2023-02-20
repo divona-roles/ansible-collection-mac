@@ -19,6 +19,6 @@
 #   ansible.builtin.command: "brew cleanup"
 #   tags: cache
 
-- name: Appstore | Upgrade all installed Mac App Store apps
-  community.general.mas:
-    upgrade_all: true
+# - name: Appstore | Upgrade all installed Mac App Store apps
+#   community.general.mas:
+#     upgrade_all: true

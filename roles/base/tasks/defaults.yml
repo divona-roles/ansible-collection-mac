@@ -106,7 +106,21 @@
     value: true
     state: present
 
-- name: Menu bar | Setup
+- name: Volumes | Show volumes on desktop
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: "{{ item }}"
+    type: bool
+    value: true
+    state: present
+  notify: Killall finder
+  with_items:
+    - "ShowExternalHardDrivesOnDesktop"
+    - "ShowHardDrivesOnDesktop"
+    - "ShowMountedServersOnDesktop"
+    - "ShowRemovableMediaOnDesktop"
+
+- name: UI | Setup
   community.general.osx_defaults:
     domain: com.apple.systemuiserver
     key: menuExtras
@@ -121,7 +135,7 @@
     state: present
   notify: Killall systemuiserver
 
-- name: Menu bar | Show volume
+- name: UI | Show volume
   community.general.osx_defaults:
     domain: com.apple.systemuiserver
     key: "NSStatusItem Visible com.apple.menuextra.volume"
@@ -130,7 +144,7 @@
     state: present
   notify: Killall systemuiserver
 
-- name: Menu bar | Show Time Machine
+- name: UI | Show Time Machine
   community.general.osx_defaults:
     domain: com.apple.systemuiserver
     key: "NSStatusItem Visible com.apple.menuextra.TimeMachine"
