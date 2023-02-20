@@ -47,6 +47,7 @@
     packages:
       - google-chrome
       # - brave
+      - firefox
 
 - name: Install | Graphics applications
   community.general.homebrew:
@@ -88,7 +89,7 @@
     state: present
   vars:
     packages:
-      - slack
+      # - slack
       - meetingbar
 
 - name: Install | Security tools (Cask)
