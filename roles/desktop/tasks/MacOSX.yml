@@ -89,7 +89,7 @@
     state: present
   vars:
     packages:
-      # - slack
+      - slack
       - meetingbar
 
 - name: Install | Security tools (Cask)
