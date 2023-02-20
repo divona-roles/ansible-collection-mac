@@ -15,6 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
+# TODO: Does not work on Github Action MacOS runner
 - name: System | Ensure user exists
   ansible.builtin.user:
     name: "{{ user }}"
