@@ -102,7 +102,6 @@
       - 1password-cli
       - bitwarden
       - wireshark
-      - rustscan
       - tailscale
       - gpg-suite
       - ykman
@@ -115,6 +114,7 @@
     packages:
       - pinentry-mac
       - age
+      - rustscan
 
 - name: Install | Networking tools (Cask)
   community.general.homebrew_cask:
