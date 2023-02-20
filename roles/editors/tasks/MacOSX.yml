@@ -22,7 +22,7 @@
   vars:
     packages:
       - emacs
-      - vscode
+      - visual-studio-code
       - neovim
 
 - name: HomeBrew | Common editors
