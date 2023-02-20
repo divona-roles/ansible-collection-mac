@@ -104,7 +104,6 @@
       - wireshark
       - tailscale
       - gpg-suite
-      - ykman
 
 - name: Install | Security tools
   community.general.homebrew:
@@ -115,6 +114,7 @@
       - pinentry-mac
       - age
       - rustscan
+      - ykman
 
 - name: Install | Networking tools (Cask)
   community.general.homebrew_cask:
