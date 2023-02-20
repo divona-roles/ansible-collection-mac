@@ -15,6 +15,13 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
+- name: System | Ensure configured taps are tapped.
+  community.general.homebrew_tap:
+    name: '{{ item.name | default(item) }}'
+    url: '{{ item.url | default(omit) }}'
+    state: present
+  loop: "{{ homebrew_taps_cloud }}"
+
 - name: HomeBrew | Git cloud tools
   community.general.homebrew:
     name: "{{ packages }}"

@@ -16,7 +16,7 @@
 
 ---
 # defaults file for cloud
-homebrew_taps:
+homebrew_taps_cloud:
   - hashicorp/tap
   - kwilczynski/homebrew-pkenv
   - kubescape/tap
