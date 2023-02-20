@@ -23,7 +23,6 @@
     packages:
       - emacs
       - visual-studio-code
-      - neovim
 
 - name: HomeBrew | Common editors
   community.general.homebrew:
