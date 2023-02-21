@@ -51,6 +51,8 @@
       - starship
       - direnv
       - bat
+      - yq
+      - jq
 
 - name: Packages | Install modern Unix tools
   community.general.homebrew:
