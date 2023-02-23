@@ -23,6 +23,7 @@
     packages:
       - mas
       - asdf
+      - rtx
 
 - name: Packages | Install terminal emulators
   community.general.homebrew_cask:
