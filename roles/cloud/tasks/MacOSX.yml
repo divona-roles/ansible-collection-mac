@@ -22,6 +22,28 @@
     state: present
   loop: "{{ homebrew_taps_cloud }}"
 
+- name: HomeBrew | Cloud providers CLI
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - awscli
+      - azure-cli
+      - scw
+      - doctl
+      - aliyun-cli
+      - oci-cli
+
+- name: HomeBrew | Cloud providers CLI (Cask)
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - google-cloud-sdk
+      - ibm-cloud-cli
+
 - name: HomeBrew | Git cloud tools
   community.general.homebrew:
     name: "{{ packages }}"
