@@ -132,3 +132,4 @@
   vars:
     packages:
       - sol
+      - balenaetcher
