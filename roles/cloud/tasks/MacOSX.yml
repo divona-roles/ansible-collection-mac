@@ -62,6 +62,7 @@
       - lima
       - colima
       - docker
+      - docker-buildx
       - docker-compose
       - krew
       - kubeseal
