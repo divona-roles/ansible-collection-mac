@@ -21,7 +21,7 @@
     state: present
   vars:
     packages:
-      - mas
+      # - mas
       - asdf
       - rtx
 
@@ -42,7 +42,6 @@
     packages:
       - fzf
       - tmux
-      - zellij
       - ncdu
       - git
       - gpg2
@@ -51,7 +50,6 @@
       - gitui
       - starship
       - direnv
-      - bat
       - yq
       - jq
 
@@ -61,6 +59,17 @@
     state: present
   vars:
     packages:
+      - zellij
+      - bat
       - ripgrep
       - exa
       - fd
+
+- name: Packages | Install precommit tools
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - shellcheck
+      - shfmt
