@@ -124,6 +124,7 @@
     packages:
       - lulu
       - sloth
+      - transmission
 
 - name: Install | System tools (Cask)
   community.general.homebrew_cask:
