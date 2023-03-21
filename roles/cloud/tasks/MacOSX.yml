@@ -67,6 +67,7 @@
       - krew
       - kubeseal
       - kubescape-cli
+      - chainctl
 
 - name: Homebrew | Container tools (Cask)
   community.general.homebrew_cask:
