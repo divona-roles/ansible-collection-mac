@@ -20,3 +20,4 @@ homebrew_taps_cloud:
   - hashicorp/tap
   - kwilczynski/homebrew-pkenv
   - kubescape/tap
+  - chainguard-dev/tap
