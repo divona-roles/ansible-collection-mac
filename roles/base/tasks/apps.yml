@@ -73,3 +73,11 @@
     packages:
       - shellcheck
       - shfmt
+
+- name: Packages | Install network tools
+  community.general.homebrew:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - hurl
