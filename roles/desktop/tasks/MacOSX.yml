@@ -91,6 +91,7 @@
     packages:
       - slack
       - meetingbar
+      - noti
 
 - name: Install | Security tools (Cask)
   community.general.homebrew_cask:
