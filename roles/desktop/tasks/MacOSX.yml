@@ -105,6 +105,7 @@
       - wireshark
       - tailscale
       - gpg-suite
+      - keka
 
 - name: Install | Security tools
   community.general.homebrew:
