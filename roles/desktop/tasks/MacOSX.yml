@@ -38,6 +38,7 @@
     packages:
       - openinterminal
       - ueli
+      - maccy
 
 - name: Install | Web applications
   community.general.homebrew_cask:
