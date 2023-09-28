@@ -116,6 +116,7 @@
     packages:
       - pinentry-mac
       - age
+      - age-plugin-yubikey
       - rustscan
       - ykman
       - gitsign
@@ -147,3 +148,14 @@
     packages:
       - sol
       - balenaetcher
+
+- name: Install | System tools
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - zenith
+      - xplr
+      - pumas
+      - yazi
