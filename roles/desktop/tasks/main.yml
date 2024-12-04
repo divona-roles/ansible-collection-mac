@@ -20,3 +20,9 @@
   block:
     - name: Editors | Core
       ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+
+- name: Include OS-specific tasks
+  when: ansible_distribution == 'MacOSX'
+  block:
+    - name: Editors | Appstore
+      ansible.builtin.include_tasks: "appstore.yml"
