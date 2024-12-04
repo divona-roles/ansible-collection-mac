@@ -16,3 +16,5 @@
 
 ---
 # vars file for setup
+appstore_mas_package: mas
+appstore_pause: 60

@@ -18,3 +18,5 @@
 homebrew_taps_desktop:
   - koekeishiya/formulae
   - sigstore/tap
+
+appstore_applications: []
