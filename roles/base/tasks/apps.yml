@@ -62,7 +62,7 @@
       - zellij
       - bat
       - ripgrep
-      - exa
+      - eza
       - fd
 
 - name: Packages | Install precommit tools
