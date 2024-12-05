@@ -33,7 +33,6 @@ homebrew_taps:
   - homebrew/bundle
   - homebrew/services
   - homebrew/cask
-  - homebrew/cask-fonts
   - hashicorp/tap
 
 homebrew_cask_appdir: /Applications
