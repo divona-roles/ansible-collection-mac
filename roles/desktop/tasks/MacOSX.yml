@@ -15,24 +15,6 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-- name: Appstore | Install applications
-  ansible.builtin.command: "mas install {{ item }}"
-  register: result
-  changed_when: result.stdout.find('Installed') != 1
-  loop: "{{ homebrew_taps_desktop }}"
-
-- name: Appstore | Update applications
-  ansible.builtin.command: "mas upgrade {{ item }}"
-  register: result
-  changed_when: result.stdout.find('Installed') != 1
-  loop: "{{ homebrew_taps_desktop }}"
-- name: System | Ensure configured taps are tapped.
-  community.general.homebrew_tap:
-    name: '{{ item.name | default(item) }}'
-    url: '{{ item.url | default(omit) }}'
-    state: present
-  loop: "{{ homebrew_taps_desktop }}"
-
 # - name: Install | Finder tools
 #   community.general.homebrew_cask:
 #     name: "{{ packages }}"
