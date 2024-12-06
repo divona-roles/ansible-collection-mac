@@ -144,13 +144,12 @@
       - balenaetcher
 
 - name: Install | System tools
-  community.general.homebrew_cask:
+  community.general.homebrew:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
       - zenith
       - xplr
-      - pumas
       - yazi
       - sk
