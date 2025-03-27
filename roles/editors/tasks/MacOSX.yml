@@ -21,8 +21,9 @@
     state: present
   vars:
     packages:
-      - emacs
       - visual-studio-code
+      # - emacs
+      - zed
 
 - name: HomeBrew | Common editors
   community.general.homebrew:

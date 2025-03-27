@@ -21,9 +21,9 @@
     state: present
   vars:
     packages:
-      # - mas
-      - asdf
-      - rtx
+      - mas
+      - mise
+      # - asdf
 
 - name: Packages | Install terminal emulators
   community.general.homebrew_cask:
@@ -32,7 +32,9 @@
   vars:
     packages:
       - iterm2
-      - alacritty
+      # - alacritty
+      # - wezterm
+      - ghostty
 
 - name: Packages | Install core tools
   community.general.homebrew:

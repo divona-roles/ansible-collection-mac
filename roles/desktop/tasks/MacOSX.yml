@@ -32,6 +32,7 @@
       - openinterminal
       - ueli
       - maccy
+      - marta
 
 - name: Install | Web applications
   community.general.homebrew_cask:
@@ -115,7 +116,6 @@
       - ykman
       - gitsign
 
-
 - name: Packages | Networking tools
   community.general.homebrew:
     name: "{{ packages }}"
@@ -154,3 +154,11 @@
       - xplr
       - yazi
       - sk
+
+- name: Install | AI tools (Cask)
+  community.general.homebrew_cask:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - brew install --cask amazon-q
