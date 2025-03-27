@@ -100,6 +100,7 @@
       - tailscale
       - gpg-suite
       - keka
+      - opkssh
 
 - name: Install | Security tools
   community.general.homebrew:

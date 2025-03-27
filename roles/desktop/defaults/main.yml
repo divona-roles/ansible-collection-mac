@@ -18,5 +18,6 @@
 homebrew_taps_desktop:
   - koekeishiya/formulae
   - sigstore/tap
+  - openpubkey/opkssh
 
 appstore_applications: []
